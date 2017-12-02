@@ -81,15 +81,17 @@ class Bot
 	 *
 	 * @param string $chatid Telegram chat id
 	 * @param string $text   Text of message
+	 * @param string $mode   Mode of message
 	 *
 	 * @return array Result of send
 	 */
 
-	public function sendMessage(string $chatid, string $text)
+	public function sendMessage(string $chatid, string $text, string $mode = "Markdown")
 	    {
 		return $this->_exec("sendMessage", [
-		    "chat_id" => $chatid,
-		    "text"    => $text,
+		    "chat_id"    => $chatid,
+		    "text"       => $text,
+		    "parse_mode" => $mode,
 		]);
 	    } //end sendMessage()
 
